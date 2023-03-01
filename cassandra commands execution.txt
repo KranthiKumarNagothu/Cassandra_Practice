@@ -1,0 +1,420 @@
+Microsoft Windows [Version 10.0.22000.1455]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\apache-cassandra-3.11.10\bin>help
+For more information on a specific command, type HELP command-name
+ASSOC          Displays or modifies file extension associations.
+ATTRIB         Displays or changes file attributes.
+BREAK          Sets or clears extended CTRL+C checking.
+BCDEDIT        Sets properties in boot database to control boot loading.
+CACLS          Displays or modifies access control lists (ACLs) of files.
+CALL           Calls one batch program from another.
+CD             Displays the name of or changes the current directory.
+CHCP           Displays or sets the active code page number.
+CHDIR          Displays the name of or changes the current directory.
+CHKDSK         Checks a disk and displays a status report.
+CHKNTFS        Displays or modifies the checking of disk at boot time.
+CLS            Clears the screen.
+CMD            Starts a new instance of the Windows command interpreter.
+COLOR          Sets the default console foreground and background colors.
+COMP           Compares the contents of two files or sets of files.
+COMPACT        Displays or alters the compression of files on NTFS partitions.
+CONVERT        Converts FAT volumes to NTFS.  You cannot convert the
+               current drive.
+COPY           Copies one or more files to another location.
+DATE           Displays or sets the date.
+DEL            Deletes one or more files.
+DIR            Displays a list of files and subdirectories in a directory.
+DISKPART       Displays or configures Disk Partition properties.
+DOSKEY         Edits command lines, recalls Windows commands, and
+               creates macros.
+DRIVERQUERY    Displays current device driver status and properties.
+ECHO           Displays messages, or turns command echoing on or off.
+ENDLOCAL       Ends localization of environment changes in a batch file.
+ERASE          Deletes one or more files.
+EXIT           Quits the CMD.EXE program (command interpreter).
+FC             Compares two files or sets of files, and displays the
+               differences between them.
+FIND           Searches for a text string in a file or files.
+FINDSTR        Searches for strings in files.
+FOR            Runs a specified command for each file in a set of files.
+FORMAT         Formats a disk for use with Windows.
+FSUTIL         Displays or configures the file system properties.
+FTYPE          Displays or modifies file types used in file extension
+               associations.
+GOTO           Directs the Windows command interpreter to a labeled line in
+               a batch program.
+GPRESULT       Displays Group Policy information for machine or user.
+GRAFTABL       Enables Windows to display an extended character set in
+               graphics mode.
+HELP           Provides Help information for Windows commands.
+ICACLS         Display, modify, backup, or restore ACLs for files and
+               directories.
+IF             Performs conditional processing in batch programs.
+LABEL          Creates, changes, or deletes the volume label of a disk.
+MD             Creates a directory.
+MKDIR          Creates a directory.
+MKLINK         Creates Symbolic Links and Hard Links
+MODE           Configures a system device.
+MORE           Displays output one screen at a time.
+MOVE           Moves one or more files from one directory to another
+               directory.
+OPENFILES      Displays files opened by remote users for a file share.
+PATH           Displays or sets a search path for executable files.
+PAUSE          Suspends processing of a batch file and displays a message.
+POPD           Restores the previous value of the current directory saved by
+               PUSHD.
+PRINT          Prints a text file.
+PROMPT         Changes the Windows command prompt.
+PUSHD          Saves the current directory then changes it.
+RD             Removes a directory.
+RECOVER        Recovers readable information from a bad or defective disk.
+REM            Records comments (remarks) in batch files or CONFIG.SYS.
+REN            Renames a file or files.
+RENAME         Renames a file or files.
+REPLACE        Replaces files.
+RMDIR          Removes a directory.
+ROBOCOPY       Advanced utility to copy files and directory trees
+SET            Displays, sets, or removes Windows environment variables.
+SETLOCAL       Begins localization of environment changes in a batch file.
+SC             Displays or configures services (background processes).
+SCHTASKS       Schedules commands and programs to run on a computer.
+SHIFT          Shifts the position of replaceable parameters in batch files.
+SHUTDOWN       Allows proper local or remote shutdown of machine.
+SORT           Sorts input.
+START          Starts a separate window to run a specified program or command.
+SUBST          Associates a path with a drive letter.
+SYSTEMINFO     Displays machine specific properties and configuration.
+TASKLIST       Displays all currently running tasks including services.
+TASKKILL       Kill or stop a running process or application.
+TIME           Displays or sets the system time.
+TITLE          Sets the window title for a CMD.EXE session.
+TREE           Graphically displays the directory structure of a drive or
+               path.
+TYPE           Displays the contents of a text file.
+VER            Displays the Windows version.
+VERIFY         Tells Windows whether to verify that your files are written
+               correctly to a disk.
+VOL            Displays a disk volume label and serial number.
+XCOPY          Copies files and directory trees.
+WMIC           Displays WMI information inside interactive command shell.
+
+For more information on tools see the command-line reference in the online help.
+
+C:\apache-cassandra-3.11.10\bin>cqlsh
+
+WARNING: console codepage must be set to cp65001 to support utf-8 encoding on Windows platforms.
+If you experience encoding problems, change your console codepage with 'chcp 65001' before starting cqlsh.
+
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.11.10 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+WARNING: pyreadline dependency missing.  Install to enable tab completion.
+cqlsh> help
+
+Documented shell commands:
+===========================
+CAPTURE  CLS          COPY  DESCRIBE  EXPAND  LOGIN   SERIAL  SOURCE   UNICODE
+CLEAR    CONSISTENCY  DESC  EXIT      HELP    PAGING  SHOW    TRACING
+
+CQL help topics:
+================
+AGGREGATES               CREATE_KEYSPACE           DROP_TRIGGER      TEXT
+ALTER_KEYSPACE           CREATE_MATERIALIZED_VIEW  DROP_TYPE         TIME
+ALTER_MATERIALIZED_VIEW  CREATE_ROLE               DROP_USER         TIMESTAMP
+ALTER_TABLE              CREATE_TABLE              FUNCTIONS         TRUNCATE
+ALTER_TYPE               CREATE_TRIGGER            GRANT             TYPES
+ALTER_USER               CREATE_TYPE               INSERT            UPDATE
+APPLY                    CREATE_USER               INSERT_JSON       USE
+ASCII                    DATE                      INT               UUID
+BATCH                    DELETE                    JSON
+BEGIN                    DROP_AGGREGATE            KEYWORDS
+BLOB                     DROP_COLUMNFAMILY         LIST_PERMISSIONS
+BOOLEAN                  DROP_FUNCTION             LIST_ROLES
+COUNTER                  DROP_INDEX                LIST_USERS
+CREATE_AGGREGATE         DROP_KEYSPACE             PERMISSIONS
+CREATE_COLUMNFAMILY      DROP_MATERIALIZED_VIEW    REVOKE
+CREATE_FUNCTION          DROP_ROLE                 SELECT
+CREATE_INDEX             DROP_TABLE                SELECT_JSON
+
+cqlsh> CREATE_KEYSPACE mydb WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1} ;
+SyntaxException: line 1:0 no viable alternative at input 'CREATE_KEYSPACE' ([CREATE_KEYSPACE]...)
+cqlsh> CREATE KEYSPACE mydb WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1} ;
+cqlsh> ALTER KEYSPACE mydb WITH replication = {'class':'SimpleStrategy', 'replication_factor' :3};
+cqlsh> use mydb;
+cqlsh:mydb> CREATE TABLE emp(   emp_id int PRIMARY KEY,   emp_name text,   emp_city text,   emp_sal varint,   emp_phone varint   );
+cqlsh:mydb> describe mydb.emp;
+
+CREATE TABLE mydb.emp (
+    emp_id int PRIMARY KEY,
+    emp_city text,
+    emp_name text,
+    emp_phone varint,
+    emp_sal varint
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+cqlsh:mydb> select * from emp;
+
+ emp_id | emp_city | emp_name | emp_phone | emp_sal
+--------+----------+----------+-----------+---------
+
+(0 rows)
+cqlsh:mydb> INSERT INTO emp (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO emp (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO emp (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+cqlsh:mydb> select * from emp;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 | Hyderabad |    robin | 9848022339 |   40000
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(3 rows)
+cqlsh:mydb> select * from emp where emp_id=2;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      2 | Hyderabad |    robin | 9848022339 |   40000
+
+(1 rows)
+cqlsh:mydb> update employee set emp_city='Delhi' where emp_id=2;
+InvalidRequest: Error from server: code=2200 [Invalid query] message="unconfigured table employee"
+cqlsh:mydb> update emp set emp_city='Delhi' where emp_id=2;
+cqlsh:mydb> select * from emp;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 |     Delhi |    robin | 9848022339 |   40000
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(3 rows)
+cqlsh:mydb> select emp_name, emp_city emp where emp_id=3;
+SyntaxException: line 1:26 no viable alternative at input 'emp' (select emp_name, [emp_city] emp...)
+cqlsh:mydb> select emp_name, emp_city from emp where emp_id=3;
+
+ emp_name | emp_city
+----------+----------
+   rahman |  Chennai
+
+(1 rows)
+cqlsh:mydb> INSERT INTO emp (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(4,'kranthi', 'Chennai', 9848022331, 46000);
+cqlsh:mydb> INSERT INTO emp (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(5,'kumar', 'Chennai', 9848022332, 47000);
+cqlsh:mydb> select * from emp;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      5 |   Chennai |    kumar | 9848022332 |   47000
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 |     Delhi |    robin | 9848022339 |   40000
+      4 |   Chennai |  kranthi | 9848022331 |   46000
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(5 rows)
+cqlsh:mydb> delete emp_sal from emp where emp_id=4;
+cqlsh:mydb> select * from emp;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      5 |   Chennai |    kumar | 9848022332 |   47000
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 |     Delhi |    robin | 9848022339 |   40000
+      4 |   Chennai |  kranthi | 9848022331 |    null
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(5 rows)
+cqlsh:mydb> CREATE TABLE emp1(
+        ...    emp_id int PRIMARY KEY,
+        ...    emp_name text,
+        ...    emp_city text,
+        ...    emp_sal varint,
+        ...    emp_phone varint
+        ...    );
+cqlsh:mydb> INSERT INTO emp1 (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO emp1 (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO emp1(emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+cqlsh:mydb> INSERT INTO emp1 (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(4,'kranthi', 'Chennai', 9848022331, 46000);
+cqlsh:mydb> INSERT INTO emp1 (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(5,'kumar', 'Chennai', 9848022332, 47000);
+cqlsh:mydb> select * from emp1;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      5 |   Chennai |    kumar | 9848022332 |   47000
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 | Hyderabad |    robin | 9848022339 |   40000
+      4 |   Chennai |  kranthi | 9848022331 |   46000
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(5 rows)
+cqlsh:mydb> truncate emp1;
+cqlsh:mydb> select * from emp1;
+
+ emp_id | emp_city | emp_name | emp_phone | emp_sal
+--------+----------+----------+-----------+---------
+
+(0 rows)
+cqlsh:mydb> drop emp1;
+SyntaxException: line 1:5 no viable alternative at input 'emp1' ([drop] emp1...)
+cqlsh:mydb> drop table emp1;
+cqlsh:mydb> select * from emp1;
+InvalidRequest: Error from server: code=2200 [Invalid query] message="unconfigured table emp1"
+cqlsh:mydb> describe mydb;
+
+CREATE KEYSPACE mydb WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'}  AND durable_writes = true;
+
+CREATE TABLE mydb.emp (
+    emp_id int PRIMARY KEY,
+    emp_city text,
+    emp_name text,
+    emp_phone varint,
+    emp_sal varint
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+cqlsh:mydb> describe tables;
+
+emp
+
+cqlsh:mydb> create table data(name text primary key, email list<text>);
+cqlsh:mydb> describe data;
+
+CREATE TABLE mydb.data (
+    name text PRIMARY KEY,
+    email list<text>
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+cqlsh:mydb> INSERT INTO data (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Undefined column name emp_id"
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO data (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Undefined column name emp_id"
+cqlsh:mydb>
+cqlsh:mydb> INSERT INTO data(emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Undefined column name emp_id"
+cqlsh:mydb> INSERT INTO data (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(4,'kranthi', 'Chennai', 9848022331, 46000);
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Undefined column name emp_id"
+cqlsh:mydb> INSERT INTO data (emp_id, emp_name, emp_city,
+        ...    emp_phone, emp_sal) VALUES(5,'kumar', 'Chennai', 9848022332, 47000);
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Undefined column name emp_id"
+cqlsh:mydb> INSERT INTO data(name, email) VALUES ('ramu',
+        ... ['abc@gmail.com','cba@yahoo.com']);
+cqlsh:mydb> INSERT INTO data(name, email) VALUES ('kranthi',
+        ... ['abcd@gmail.com','cbaf@yahoo.com']);
+cqlsh:mydb> INSERT INTO data(name, email) VALUES ('kumar',
+        ... ['kumar@gmail.com','kumar@yahoo.com']);
+cqlsh:mydb> select * from data;
+
+ name    | email
+---------+----------------------------------------
+ kranthi |   ['abcd@gmail.com', 'cbaf@yahoo.com']
+    ramu |     ['abc@gmail.com', 'cba@yahoo.com']
+   kumar | ['kumar@gmail.com', 'kumar@yahoo.com']
+
+(3 rows)
+cqlsh:mydb> CREATE TABLE blogs (blogId int,
+        ...                     time1 int,
+        ...                     time2 int,
+        ...                     author text,
+        ...                     content text,
+        ...                     PRIMARY KEY(blogId, time1, time2));
+cqlsh:mydb> describe blogs;
+
+CREATE TABLE mydb.blogs (
+    blogid int,
+    time1 int,
+    time2 int,
+    author text,
+    content text,
+    PRIMARY KEY (blogid, time1, time2)
+) WITH CLUSTERING ORDER BY (time1 ASC, time2 ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+cqlsh:mydb> select * from blogs;
+
+ blogid | time1 | time2 | author | content
+--------+-------+-------+--------+---------
+
+(0 rows)
+cqlsh:mydb> select * from blogs where time1 = 141;
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Cannot execute this query as it might involve data filtering and thus may have unpredictable performance. If you want to execute this query despite the performance unpredictability, use ALLOW FILTERING"
+cqlsh:mydb> SELECT * FROM blogs WHERE author=’Jonathan Ellis’ and time2 = 1418306451235;
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Unable to make int from '1418306451235'"
+cqlsh:mydb> selectg * from blogs where time1 = 141 allow filtering;
+SyntaxException: line 1:0 no viable alternative at input 'selectg' ([selectg]...)
+cqlsh:mydb> select * from blogs where time1 = 141 allow filtering;
+
+ blogid | time1 | time2 | author | content
+--------+-------+-------+--------+---------
+
+(0 rows)
+cqlsh:mydb>

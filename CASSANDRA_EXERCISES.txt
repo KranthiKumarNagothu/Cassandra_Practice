@@ -1,0 +1,94 @@
+CREATE KEYSPACE sample_db WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+ALTER KEYSPACE sample_db WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE TABLE emp(
+   emp_id int PRIMARY KEY,
+   emp_name text,
+   emp_city text,
+   emp_sal varint,
+   emp_phone varint
+   );
+
+
+describe sample_db.emp;
+
+INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+
+INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+
+INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(4,'kranthi', 'Chennai', 9848022331, 46000);
+INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(5,'kumar', 'Chennai', 9848022332, 47000);
+
+
+
+
+
+
+
+ update emp set emp_city='Delhi' where emp_id=2;
+
+READ DATA
+
+select * from emp where emp_id=3;
+select emp_name, emp_city emp where emp_id=3;
+
+
+DELETE DATA
+ delete emp_sal from emp where emp_id=4;
+
+TRUNCATE TABLE:DELETES THE ENTIRE DATA IN THE TABLE
+DROP TABLE: DROPS THE TABLE PERMINANTLY ALONG WITH THE DATA IN IT.
+ truncate emp1;
+
+
+CREATE TABLE emp1(
+   emp_id int PRIMARY KEY,
+   emp_name text,
+   emp_city text,
+   emp_sal varint,
+   emp_phone varint
+   );
+
+INSERT INTO emp1 (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+
+INSERT INTO emp1 (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+
+INSERT INTO emp1(emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+INSERT INTO emp1 (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(4,'kranthi', 'Chennai', 9848022331, 46000);
+INSERT INTO emp1 (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(5,'kumar', 'Chennai', 9848022332, 47000);
+
+
+
+CQL COLLECTION DEMO
+
+create table data(name text primary key, email list<text>);
+
+
+INSERT INTO data(name, email) VALUES ('ramu',
+['abc@gmail.com','cba@yahoo.com']);
+INSERT INTO data(name, email) VALUES ('kranthi',
+['abcd@gmail.com','cbaf@yahoo.com']);
+INSERT INTO data(name, email) VALUES ('kumar',
+['kumar@gmail.com','kumar@yahoo.com']);
+
+
+ALLOW FILTERING CONCEPT
+
+CREATE TABLE blogs (blogId int, 
+                    time1 int, 
+                    time2 int, 
+                    author text, 
+                    content text, 
+                    PRIMARY KEY(blogId, time1, time2));
